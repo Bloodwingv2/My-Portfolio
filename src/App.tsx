@@ -7,30 +7,35 @@ gsap.registerPlugin(ScrambleTextPlugin);
 
 
 function App() {
-  
+  const landingText = ["Mirang Bhandari", "connect", "evolve", "dominate"]; //Place holder
+
   useEffect(() => {
-  // Start animation on next frame for smoother init
-  requestAnimationFrame(() => {
     const tl = gsap.timeline({
       id: "text-scramble",
-      ease: "power2.inOut",
       repeat: -1,
-      repeatDelay: 3,
-      yoyo: true,
+      ease: "power2.inOut",
     });
 
-    tl.to("#scramble-name", {
-      scrambleText: {
-        text: "Mirang Bhandari",
-        chars: "カタカナひらがな漢字ア",
-        speed: 1,
-        revealDelay: 0.5,
-        tweenLength: false,
-      },
-      duration: 2.8,
-      ease: "power1.inOut",
+    landingText.forEach((word) => {
+      tl.to("#scramble-name", {
+        scrambleText: {
+          text: word,
+          chars: "カタカナひらがな漢字ア",
+          speed: 1.0,
+          revealDelay: 0.5,
+          tweenLength: false,
+        },
+        duration: 3.0,
+        ease: "power1.inOut",
+      })
+      .to("#scramble-name", {
+        duration: 3.5, // Pause between words
+      });
     });
-  });
+
+  return () => {
+    tl.kill();
+  };
 }, []);
 
   return (
