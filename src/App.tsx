@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrambleTextPlugin);
 
 
 function App() {
-  const landingText = ["Mirang Bhandari", "connect", "evolve", "dominate"]; //Place holder
+  const landingText = ["a Software developer", "an Open-Source Contributor", "a Part-time Designer", "a Tech-Enthusiast"]; // Place holder
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -29,7 +29,7 @@ function App() {
         ease: "power1.inOut",
       })
       .to("#scramble-name", {
-        duration: 3.5, // Pause between words
+        duration: 8, // Pause between words
       });
     });
 
@@ -52,8 +52,8 @@ function App() {
             </ul>
           </div>
           <div>
-            <p id = 'scramble-name' className='mt-25 font-bold text-8xl text-Black-300 text-left p-5'>Mirang Bhandari</p>
-            <p className='text-5xl text-shadow-black p-5'>I am a developer lorem opsum</p>
+            <p className='mt-25 font-bold text-7xl text-Black-300 text-left p-5'>Mirang Bhandari</p>
+            <p className='text-5xl text-shadow-black p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
             <p className='text-xl text-right p-4'>Passion blah blah</p>
           </div>
         </section>
