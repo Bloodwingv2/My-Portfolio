@@ -7,11 +7,17 @@ gsap.registerPlugin(ScrambleTextPlugin);
 
 
 function App() {
-  const landingText = ["a Software developer", "an Open-Source Contributor", "a Part-time Designer", "a Tech-Enthusiast"]; // Place holder
+
+  const landingText = [
+  { text: "OSS-Developer", color: "#B91C1C" }, // deep blue
+  { text: "Full-Stack Dev", color: "#1E3A8A" }, // rich red
+  { text: "Agentic AI Dev", color: "#047857" }, // dark green
+  { text: "AI Enthusiast", color: "#F59E0B" },
+  { text: "Explorer", color: "#1E3A8A"} // golden yellow
+];
 
   useEffect(() => {
 
-    // Timeline for "Mirang Bhandari" - plays once
     const onceTl = gsap.timeline({
       ease: "power2.inOut",
     });
@@ -46,22 +52,23 @@ function App() {
       ease: "power2.inOut",
     });
 
-    landingText.forEach((word) => {
-      tl.to("#scramble-name", {
-        scrambleText: {
-          text: word,
-          chars: "カタカナひらがな漢字ア",
-          speed: 1.0,
-          revealDelay: 0.5,
-          tweenLength: false,
-        },
-        duration: 3.0,
-        ease: "power1.inOut",
-      })
-      .to("#scramble-name", {
-        duration: 8, // Pause between words
-      });
-    });
+    landingText.forEach(({ text, color }) => {
+  tl.to("#scramble-name", {
+    scrambleText: {
+      text: text,
+      chars: "カタカナひらがな漢字ア",
+      speed: 1.0,
+      revealDelay: 0.5,
+      tweenLength: false,
+    },
+    color: color, // animate CSS color
+    duration: 3.0,
+    ease: "power1.inOut",
+  })
+  .to("#scramble-name", {
+    duration: 2, // pause between words
+  });
+});
 
   return () => {
     onceTl.kill();
@@ -72,21 +79,21 @@ function App() {
   return (
     <main className="overflow-x-hidden">
       <div>
-        <section className='w-full min-h-screen bg-[#FFFDD0] p-4'>
+        <section className='w-full min-h-screen bg-[#FFFDD0] p-4 mr-2'>
           <div>
-            <ul className='text-shadow font-switzer flex flex-wrap items-center ml-4 gap-12 text-2xl md:flex-row'>
-              <li className='text-xl cursor-pointer underline-smooth'>Work</li>
-              <li className='text-xl cursor-pointer underline-smooth'>About</li>
-              <li className='text-xl cursor-pointer underline-smooth'>Network</li>
-              <li className='text-xl cursor-pointer underline-smooth'>Contact</li>
-              <li className='text-xl md:ml-auto block sm:hidden'>Software Developer</li>
-            </ul>
+            <nav>
+              <ul className='text-shadow font-switzer flex flex-row md:flex-row justify-center items-start gap-4 md:gap-12 mb-20'>
+                <li className='sm:text-xl md:text-xl text-2xl cursor-pointer underline-smooth'>Work</li>
+                <li className='sm:text-xl md:text-xl text-2xl cursor-pointer underline-smooth'>About</li>
+                <li className='sm:text-xl md:text-xl text-2xl cursor-pointer underline-smooth'>Network</li>
+                <li className='sm:text-xl md:text-xl text-2xl cursor-pointer underline-smooth'>Contact</li>
+              </ul>
+            </nav>
           </div>
-          <div className="mt-8 md:mt-16">
-            <p id='scramble-first' className='text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Mirang</p>
-            <p id='scramble-last' className='text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Bhandari</p>
-            <p className='text-right mt-4'>video placeholder</p>
-            <p className='text-shadow font-switzer text-3xl md:text-5xl mt-8'>I am <span id='scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
+          <div className="mt-8 md:mt-16 mr-2">
+            <p id='scramble-first' className='text-center text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Mirang</p>
+            <p id='scramble-last' className='text-center text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Bhandari</p>
+            <h2 id ='scramble-name' className='text-center text-shadow font-switzer font-bold text-3xl md:text-7xl mt-8 whitespace-nowrap'>Software Developer</h2>
           </div>
         </section>
         <section className='w-full bg-zinc-900 py-12 md:py-20 min-h-screen px-4'>
