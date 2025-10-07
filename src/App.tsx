@@ -10,6 +10,36 @@ function App() {
   const landingText = ["a Software developer", "an Open-Source Contributor", "a Part-time Designer", "a Tech-Enthusiast"]; // Place holder
 
   useEffect(() => {
+
+    // Timeline for "Mirang Bhandari" - plays once
+    const onceTl = gsap.timeline({
+      ease: "power2.inOut",
+    });
+
+    // Scramble both lines simultaneously
+    onceTl.to("#scramble-first", {
+      scrambleText: {
+        text: "Mirang",
+        chars: "カタカナひらがな漢字ア",
+        speed: 1.0,
+        revealDelay: 0.3,
+        tweenLength: false,
+      },
+      duration: 2.0,
+      ease: "power1.inOut",
+    }, 0)
+    .to("#scramble-last", {
+      scrambleText: {
+        text: "Bhandari",
+        chars: "カタカナひらがな漢字ア",
+        speed: 1.0,
+        revealDelay: 0.3,
+        tweenLength: false,
+      },
+      duration: 2.0,
+      ease: "power1.inOut",
+    }, 0); // The 0 makes them animate at the same time
+
     const tl = gsap.timeline({
       id: "text-scramble",
       repeat: -1,
@@ -34,6 +64,7 @@ function App() {
     });
 
   return () => {
+    onceTl.kill();
     tl.kill();
   };
 }, []);
@@ -41,20 +72,21 @@ function App() {
   return (
     <main>
       <div>
-        <section className='w-full bg-[#FFFDD0] py-20'>
+        <section className='w-full bg-[#FFFDD0] py-10'>
           <div>
-            <ul className='font-switzer flex flex-row'>
-              <li className='gap-x-10 pl-8 text-xl'>Work</li>
-              <li className='gap-x-10 pl-8 text-xl'>About</li>
-              <li className='gap-x-10 pl-8 text-xl'>Network</li>
-              <li className='gap-x-10 pl-8 text-xl'>Contact</li>
-              <li className='gap-x-10 pl-8 text-xl ml-auto pr-4'>Software Developer</li>
+            <ul className='text-shadow font-switzer flex flex-row'>
+              <li className='gap-x-10 ml-15 text-xl'>Work</li>
+              <li className='gap-x-10 ml-15 text-xl'>About</li>
+              <li className='gap-x-10 ml-15 text-xl'>Network</li>
+              <li className='gap-x-10 ml-15 text-xl'>Contact</li>
+              <li className='gap-x-10 text-xl ml-auto mr-4'>Software Developer</li>
             </ul>
           </div>
           <div>
-            <p className='font-satoshi mt-25 font-bold text-9xl text-Black-300 text-left p-5'>Mirang<br></br>Bhandari</p>
-            <p className='font-switzer text-5xl text-shadow-black p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
-            <p className='text-xl text-right p-4'>Passion blah blah</p>
+            <p id='scramble-first' className='ml-5 text-shadow font-satoshi mt-25 font-bold text-9xl text-Black-300 text-left p-5 overflow-hidden'>Mirang</p>
+            <p id='scramble-last' className='ml-5 text-shadow font-satoshi font-bold text-9xl text-Black-300 text-left p-5 overflow-hidden'>Bhandari</p>
+            <p className='text-right mr-10'>video placeholder</p>
+            <p className='ml-5 mb-10 text-shadow font-switzer text-5xl p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
           </div>
         </section>
         <section className='w-full bg-[#FAF3E0] py-20'>
