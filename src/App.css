@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/* Satoshi Font */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/src/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/src/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/src/fonts/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Switzer Font */
+@font-face {
+  font-family: "Switzer";
+  src: url("/src/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/src/fonts/Switzer_Complete/Fonts/WEB/fonts/Switzer-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-switzer: "Switzer", sans-serif;
+}

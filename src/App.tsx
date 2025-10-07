@@ -41,19 +41,19 @@ function App() {
   return (
     <main>
       <div>
-        <section className='w-full bg-[#FFFDD0] py-15'>
+        <section className='w-full bg-[#FFFDD0] py-20'>
           <div>
-            <ul className='flex flex-row'>
-              <li className='gap-x-5 pl-8 text-xl'>work</li>
-              <li className='gap-x-5 pl-8 text-xl'>about</li>
-              <li className='gap-x-5 pl-8 text-xl'>network</li>
-              <li className='gap-x-5 pl-8 text-xl'>contact</li>
-              <li className='gap-x-5 pl-8 text-xl ml-auto pr-4'>Software Developer</li>
+            <ul className='font-switzer flex flex-row'>
+              <li className='gap-x-10 pl-8 text-xl'>Work</li>
+              <li className='gap-x-10 pl-8 text-xl'>About</li>
+              <li className='gap-x-10 pl-8 text-xl'>Network</li>
+              <li className='gap-x-10 pl-8 text-xl'>Contact</li>
+              <li className='gap-x-10 pl-8 text-xl ml-auto pr-4'>Software Developer</li>
             </ul>
           </div>
           <div>
-            <p className='mt-25 font-bold text-7xl text-Black-300 text-left p-5'>Mirang Bhandari</p>
-            <p className='text-5xl text-shadow-black p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
+            <p className='font-satoshi mt-25 font-bold text-9xl text-Black-300 text-left p-5'>Mirang<br></br>Bhandari</p>
+            <p className='font-switzer text-5xl text-shadow-black p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
             <p className='text-xl text-right p-4'>Passion blah blah</p>
           </div>
         </section>
