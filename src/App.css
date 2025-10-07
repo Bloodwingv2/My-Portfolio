@@ -71,6 +71,19 @@
   font-style: normal;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-shape {
+  filter: blur(4px);
+}
+
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
   --font-switzer: "Switzer", sans-serif;
