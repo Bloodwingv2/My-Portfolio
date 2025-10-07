@@ -13,6 +13,25 @@
   .text-shadow-glow {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
+
+  .underline-smooth {
+    @apply relative;
+  }
+
+  .underline-smooth::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2.5px;
+  width: 0;
+  background-color: black;
+  transition: all 0.75s ease;
+}
+
+.underline-smooth:hover::after {
+  width: 100%;
+}
 }
 
 /* Satoshi Font */

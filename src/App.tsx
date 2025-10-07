@@ -70,35 +70,35 @@ function App() {
 }, []);
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <div>
-        <section className='w-full bg-[#FFFDD0] py-10'>
+        <section className='w-full min-h-screen bg-[#FFFDD0] p-4'>
           <div>
-            <ul className='text-shadow font-switzer flex flex-row'>
-              <li className='gap-x-10 ml-15 text-xl'>Work</li>
-              <li className='gap-x-10 ml-15 text-xl'>About</li>
-              <li className='gap-x-10 ml-15 text-xl'>Network</li>
-              <li className='gap-x-10 ml-15 text-xl'>Contact</li>
-              <li className='gap-x-10 text-xl ml-auto mr-4'>Software Developer</li>
+            <ul className='text-shadow font-switzer flex flex-wrap items-center ml-4 gap-12 text-2xl md:flex-row'>
+              <li className='text-xl cursor-pointer underline-smooth'>Work</li>
+              <li className='text-xl cursor-pointer underline-smooth'>About</li>
+              <li className='text-xl cursor-pointer underline-smooth'>Network</li>
+              <li className='text-xl cursor-pointer underline-smooth'>Contact</li>
+              <li className='text-xl md:ml-auto block sm:hidden'>Software Developer</li>
             </ul>
           </div>
-          <div>
-            <p id='scramble-first' className='ml-5 text-shadow font-satoshi mt-25 font-bold text-9xl text-Black-300 text-left p-5 overflow-hidden'>Mirang</p>
-            <p id='scramble-last' className='ml-5 text-shadow font-satoshi font-bold text-9xl text-Black-300 text-left p-5 overflow-hidden'>Bhandari</p>
-            <p className='text-right mr-10'>video placeholder</p>
-            <p className='ml-5 mb-10 text-shadow font-switzer text-5xl p-5 mt-10'>I am <span id = 'scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
+          <div className="mt-8 md:mt-16">
+            <p id='scramble-first' className='text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Mirang</p>
+            <p id='scramble-last' className='text-shadow font-satoshi font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-Black-300 overflow-hidden pb-2 leading-tight whitespace-normal md:whitespace-nowrap'>Bhandari</p>
+            <p className='text-right mt-4'>video placeholder</p>
+            <p className='text-shadow font-switzer text-3xl md:text-5xl mt-8'>I am <span id='scramble-name' className='whitespace-nowrap'>Software Developer</span></p>
           </div>
         </section>
-        <section className='w-full bg-[#FAF3E0] py-20'>
-          <div>
-            <p className='text-7xl font-semibold ml-4'>About</p>
-            <p className='text-2xl mt-10 ml-4'>i am a god blah blah blah coding is what i like blah blah lorem opsum</p>
+        <section className='w-full bg-zinc-900 py-12 md:py-20 min-h-screen px-4'>
+          <div className="max-w-7xl mx-auto">
+            <p className='text-5xl md:text-7xl font-semibold text-amber-50'>About</p>
+            <p className='text-xl md:text-2xl mt-8 text-amber-50'>i am a god blah blah blah coding is what i like blah blah lorem opsum</p>
           </div>
         </section>
-        <section className='w-full bg-zinc-900 py-20'>
-          <div>
-            <p className='text-7xl font-semibold text-amber-50 ml-4'>My work</p>
-            <p className='text-2xl font-semibold text-amber-50 mt-10 ml-4'>Blah blah this is my about blah blah lorem opsum</p>
+        <section className='w-full bg-zinc-900 py-12 md:py-20 min-h-screen px-4'>
+          <div className="max-w-7xl mx-auto">
+            <p className='text-5xl md:text-7xl font-semibold text-amber-50'>My work</p>
+            <p className='text-xl md:text-2xl mt-8 text-amber-50'>Blah blah this is my about blah blah lorem opsum</p>
           </div>
         </section>
       </div>
