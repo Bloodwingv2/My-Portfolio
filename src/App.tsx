@@ -149,9 +149,12 @@ return () => {
 
           {/* Hero Content */}
           <div className="mt-20 text-center">
-            <p id='scramble-first' className='text-shadow font-satoshi font-bold text-6xl md:text-9xl pb-2'>Mirang</p>
-            <p id='scramble-last' className='text-shadow font-satoshi font-bold text-6xl md:text-9xl pb-2'>Bhandari</p>
-            <h2 id='scramble-name' className='text-shadow font-switzer text-4xl md:text-6xl mt-12'>Software Developer</h2>
+            <p id='scramble-first' className='text-shadow font-satoshi font-bold text-6xl md:text-8xl pb-2'>Mirang</p>
+            <p id='scramble-last' className='text-shadow font-satoshi font-bold text-6xl md:text-8xl pb-2'>Bhandari</p>
+            <h2 id='scramble-name' className='text-shadow font-switzer text-4xl md:text-5xl mt-10 pb-10'>Software Developer</h2>
+            <p className="mt-6 text-lg md:text-xl text-zinc-600 max-w-xl mx-auto">
+              Building open-source, agentic systems that think <span className="italic">with</span> you — not for you.
+            </p>
           </div>
 
           {/* Scroll indicator */}
