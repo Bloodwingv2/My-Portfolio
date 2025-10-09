@@ -1,6 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/geist-font-1.5.1/fonts/Geist/webfonts/Geist-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Impact';
+  src: url('./fonts/impact-webfont/impact.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galgo';
+  src: url('./fonts/Giulia_B_Order_2122030992771682331/Giulia B Order 2122030992771682331/Galgo/Galgo-Regular.woff2') format('woff2'),
+       url('./fonts/Giulia_B_Order_2122030992771682331/Giulia B Order 2122030992771682331/Galgo/Galgo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
@@ -27,6 +49,9 @@ section {
   --color-black-200: #282732;
   --color-blue-50: #839cb5;
   --color-blue-100: #2d2d38;
+  --font-geist: 'Geist', sans-serif;
+  --font-impact: 'Impact', sans-serif;
+  --font-galgo: 'Galgo', serif;
 }
 
 @layer utilities {
@@ -35,6 +60,15 @@ section {
   }
   .flex-col-center {
     @apply flex flex-col justify-center items-center;
+  }
+  .font-geist {
+    font-family: var(--font-geist);
+  }
+  .font-impact {
+    font-family: var(--font-impact);
+  }
+  .font-galgo {
+    font-family: var(--font-galgo);
   }
 }
 
@@ -85,7 +119,7 @@ section {
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold font-geist relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
