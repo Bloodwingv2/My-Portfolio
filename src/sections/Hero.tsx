@@ -1,10 +1,4 @@
-import React from 'react'
-
-const words = [
-  { text: "Ideas", imgpath: "/images/ideas.svg" },
-  { text: "Concepts", imgpath: "/images/concepts.svg" },
-]
-
+import { words } from '../constants/index.tsx'
 
 const hero = () => {
   return (
