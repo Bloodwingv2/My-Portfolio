@@ -1,35 +1,46 @@
+import Button from '../components/Button.tsx'
+import HeroExperience from '../components/HeroModels/HeroExperience.tsx'
 import { words } from '../constants/index.tsx'
 
 const hero = () => {
   return (
-    <section id = "hero" className='relative overflow-hidden'>
-    <div className="absolute top-0 left-0 z-10">
-      <img src ="/images/bg.png" alt="background"/>
-    </div>
+    <section id="hero" className='relative overflow-hidden'>
+      <div className="absolute top-0 left-0 z-10">
+        <img src="/images/bg.png" alt="background" />
+      </div>
 
-    <div className='hero-layout'>
-      <header className='flex flex-col justify-center md:w-full w-screen md:px-20 px-5'>
-        <div className='flex flex-col gap-7'>
-          <div className='hero-text'>
-            <h1>Shaping 
-              <span className='slide'>
+      <div className='hero-layout'> {/* Hero Layout Section */}
+        <header className='flex flex-col justify-center md:w-full w-screen md:px-20 px-5'>
+          <div className='flex flex-col gap-7'>
+            <div className='hero-text'>
+              <h1>Shaping
+                <span className='slide'>
                   <span className='wrapper'>
                     {words.map((word) => (
-                      <span key ={word.text} className ='flex items-center md:gap-3 gap-1 pb-2'>
-                        <img src = {word.imgpath}
+                      <span key={word.text} className='flex items-center md:gap-3 gap-1 pb-2'>
+                        <img src={word.imgpath}
                           alt={word.text}
-                          className='xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50'/>
-                      <span>{word.text}</span>
+                          className='xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50' /> {/* Adjust width for all screen sizes */}
+                        <span>{word.text}</span>
                       </span>
                     ))}</span>
                 </span>
-            </h1>
-            <h1>into Real Projects</h1>
-            <h1>that deliver results</h1>
+              </h1>
+              <h1>into Real Projects</h1>
+              <h1>that deliver results</h1>
+            </div>
+            <p className='font-geist text-white-50 md:text-xl relative z-10 pointer-events-none'>Hi, I'm Mirang blah blah blah blah</p>
+            <Button className="md:w-80 md:h-16 w-60 h-12" id="button" text="see my work" />
           </div>
+        </header>
+
+        {/* Hero Models Section (Right Side)*/}
+      <figure>
+        <div className='hero-3d-layout'>
+          <HeroExperience/>
         </div>
-      </header>
-    </div>
+      </figure>
+      </div>
     </section>
   )
 }
